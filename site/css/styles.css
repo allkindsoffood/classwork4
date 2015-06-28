@@ -177,6 +177,7 @@ ul {
 
 .content {
   width: 100%;
+  background: #e1eef3;
   min-height: 100%;
   background: #FFF; }
   @media screen and (min-width: 760px) {
@@ -240,29 +241,6 @@ ul {
       .content .portfolio-image .portfolio-image div.loading img {
         width: auto;
         height: auto; }
-
-
-
-
-.panel-body {
-  padding: 15px; }
-  .panel-body:before, .panel-body:after {
-    content: " ";
-    display: table; }
-  .panel-body:after {
-    clear: both; }
-
-.panel-heading {
-  padding: 10px 15px;
-  border-bottom: 1px solid transparent;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px; }
-  .panel-heading > .dropdown .dropdown-toggle {
-    color: inherit; }
-
-
-
-
 
 div.loading {
   color: #c4c4c4;

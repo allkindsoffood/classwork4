@@ -9,7 +9,17 @@
   <script src="js/modernizr.js"></script>
   <script src="https://code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
 </head>
-<body ng-init="messageText = 'Hello World!'">
+<body ng-init="portfolios=[
+
+    {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'drunkenPirate_thumb3.png' },
+
+    {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'drunkenPirate_thumb2.png' },
+
+    {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'drunkenPirate_thumb1.png' }
+
+
+
+    ]">
 
 
 
@@ -77,44 +87,38 @@
 
     <!-- inside the .content div -->
 
-    <div style="padding:50px" class="portfolio-image" ng-init="portfolios=[
 
-    {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'drunkenPirate_thumb3.png' },
-
-    {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'drunkenPirate_thumb2.png' },
-
-    {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'drunkenPirate_thumb1.png' }
-
-
-
-    ]">
-<p>
-  There are {{portfolios.length }} portfolios on this page.</p>
   
     <input ng-model="searchFor" class="form-control">
 
 
-    <div class="col-xs-12 col-md-4" ng-repeat="portfolio in portfolios  |  filter:searchFor">
-      <div class ="panel panel-default">
-        <div class="panel-heading">
-     {{portfolio.date}}, {{portfolio.title}}
+    <article class="portfolio-item group first" ng-repeat="portfolio in portfolios  |  filter:searchFor | orderBy:'date'">
+      <header class="portfolio-info">
+        <div class="title">{{portfolio.title}}</div>
+        <div class="date">{{portfolio.date}}</div>
+        <div class="description">
+          {{portfolio.description}}
         </div>
-        <div class="panel-body">
-          <p> {{portfolio.description}}</p>
-          <img class="img-responsive" ng-src="images/{{ portfolio.imageurl }}"/>
-
-        </div>
-
-      </div>
-    </div>
+      </header>
+      <figure class="portfolio-image">
+        <img src="images/drunkenPirate_thumb3.png" alt="Pirate Ship">
+      </figure>
+    </article>
 
 
 
 
-    <figure class="portfolio-image">
-      <img src="images/drunkenPirate_thumb3.png" alt="Pirate Ship">
-    </figure>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
